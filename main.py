@@ -61,13 +61,14 @@ async def transcribe_tv(hook: SonarrImportHook):
 
 def transcribe(video_path: Path) -> str:
     audio = whisper.load_audio(video_path)
+
+    logger.info("Transcribing video: %s", video_path)
     result = model.transcribe(audio)
 
     segments = result["segments"]
 
     video_dir = video_path.parent
     video_name = video_path.stem
-
     subtitle_file = f"{video_name}-llm-sub.srt"
     subtitle_path = video_dir.joinpath(subtitle_file)
     logger.info("Writing to subtitle file: %s", subtitle_path)
