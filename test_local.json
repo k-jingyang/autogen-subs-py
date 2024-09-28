@@ -1,0 +1,36 @@
+{
+    "series": {
+        "id": 9,
+        "title": "Only Murders in the Building",
+        "path": "/home/jingyang/Workspace/autogen-subs/trimmed",
+        "tvdbId": 399959,
+        "tvMazeId": 48830,
+        "imdbId": "tt11691774",
+        "type": "standard"
+    },
+    "episodes": [
+        {
+            "id": 3044,
+            "episodeNumber": 2,
+            "seasonNumber": 4,
+            "title": "Gates of Heaven",
+            "airDate": "2024-09-03",
+            "airDateUtc": "2024-09-03T04:00:00Z"
+        }
+    ],
+    "episodeFile": {
+        "id": 124,
+        "relativePath": "only.murders.in.the.building.s04e01.1080p.web.h264-successfulcrab[EZTVx.to].mkv",
+        "path": "/data/torrents/only.murders.in.the.building.s04e01.1080p.web.h264-successfulcrab[EZTVx.to].mkv",
+        "quality": "WEBDL-1080p",
+        "qualityVersion": 1,
+        "releaseGroup": "successfulcrab",
+        "sceneName": "only.murders.in.the.building.s04e01.1080p.web.h264-successfulcrab[EZTVx.to]",
+        "size": 1531346350
+    },
+    "isUpgrade": false,
+    "downloadClient": "qbittorrent",
+    "downloadClientType": "qBittorrent",
+    "downloadId": "DE02C6E6F4E51EA63F343032E7C87494DC659CEB",
+    "eventType": "Download"
+}
