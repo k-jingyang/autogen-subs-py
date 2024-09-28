@@ -4,6 +4,7 @@ from datetime import timedelta
 from pathlib import Path
 from pydantic import BaseModel, ConfigDict
 from pydantic.alias_generators import to_camel
+from threading import Thread
 import logging
 import whisper
 
