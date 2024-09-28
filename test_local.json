@@ -2,7 +2,7 @@
     "series": {
         "id": 9,
         "title": "Only Murders in the Building",
-        "path": "/home/jingyang/Workspace/autogen-subs/trimmed",
+        "path": "/data/media/tv/Only Murders in the Building/Season 2",
         "tvdbId": 399959,
         "tvMazeId": 48830,
         "imdbId": "tt11691774",
@@ -20,12 +20,12 @@
     ],
     "episodeFile": {
         "id": 124,
-        "relativePath": "only.murders.in.the.building.s04e01.1080p.web.h264-successfulcrab[EZTVx.to].mkv",
-        "path": "/data/torrents/only.murders.in.the.building.s04e01.1080p.web.h264-successfulcrab[EZTVx.to].mkv",
+        "relativePath": "only.murders.in.the.building.s02e09.1080p.web.h264-glhf[eztv.re].mkv[eztvx.to].mkv",
+        "path": "/data/media/tv/Only Murders in the Building/Season 2/only.murders.in.the.building.s02e09.1080p.web.h264-glhf[eztv.re].mkv[eztvx.to].mkv",
         "quality": "WEBDL-1080p",
         "qualityVersion": 1,
         "releaseGroup": "successfulcrab",
-        "sceneName": "only.murders.in.the.building.s04e01.1080p.web.h264-successfulcrab[EZTVx.to]",
+        "sceneName": "only.murders.in.the.building.s02e09.1080p.web.h264-glhf[eztv.re].mkv[eztvx.to]",
         "size": 1531346350
     },
     "isUpgrade": false,
