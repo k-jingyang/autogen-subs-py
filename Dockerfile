@@ -3,6 +3,9 @@ FROM python:3.12
 # Set working directory
 WORKDIR /code
 
+# Install ffmpeg
+RUN apt update && apt install -y ffmpeg
+
 # Install Poetry
 RUN curl -sSL https://install.python-poetry.org | python3 -
 
