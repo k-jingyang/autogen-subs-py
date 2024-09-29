@@ -56,7 +56,7 @@ async def root():
 @app.post("/sonarr_webhook")
 async def transcribe_tv(hook: SonarrImportHook):
     file_path = hook.get_imported_file_path()
-    thread = Thread(target=transcribe, args=(file_path))
+    thread = Thread(target=transcribe, args=(file_path,))
     # run the thread
     thread.start()
     return {"status": "success"}
