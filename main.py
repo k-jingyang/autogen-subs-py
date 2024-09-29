@@ -69,7 +69,10 @@ def transcribe(video_path: Path) -> str:
 
     video_dir = video_path.parent
     video_name = video_path.stem
-    subtitle_file = f"{video_name}-llm-sub.srt"
+    # jellyfin requires the subs to be <video_name>.srt
+    # this will also not collide with bazaar as bazaar will download subs with .<language>.srt (i.e. .en.srt)
+    # - however, ensure that bazarr's Single Language Option is disabled
+    subtitle_file = f"{video_name}.srt"
     subtitle_path = video_dir.joinpath(subtitle_file)
     logger.info("Writing to subtitle file: %s", subtitle_path)
 
