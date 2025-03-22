@@ -14,6 +14,7 @@ model = whisper.load_model("base")
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+
 class BaseSchema(BaseModel):
     model_config = ConfigDict(
         alias_generator=to_camel,
@@ -21,10 +22,12 @@ class BaseSchema(BaseModel):
         from_attributes=True,
     )
 
+
 class SonarrSeries(BaseSchema):
     id: int
     title: str
     path: str  # folder path of the series
+
 
 class SonarrEpisodeFile(BaseSchema):
     id: int
@@ -33,6 +36,7 @@ class SonarrEpisodeFile(BaseSchema):
     size: int
     scene_name: str
 
+
 class SonarrImportHook(BaseSchema):
     series: SonarrSeries
     episode_file: SonarrEpisodeFile
@@ -40,18 +44,23 @@ class SonarrImportHook(BaseSchema):
     def get_imported_file_path(self) -> Path:
         return Path(self.series.path).joinpath(self.episode_file.relative_path)
 
+
 app = FastAPI()
 task_queue = Queue()
+
 
 @app.get("/")
 async def root():
     return {"message": "Hello World"}
 
+
 @app.post("/sonarr_webhook")
 async def transcribe_tv(hook: SonarrImportHook):
     file_path = hook.get_imported_file_path()
     task_queue.put(file_path)
+    logger.info("Added to queue: %s", file_path)
     return {"status": "success"}
+
 
 def transcribe():
     while True:
@@ -76,7 +85,9 @@ def transcribe():
         # Write to subtitle file
         with open(subtitle_path, "w", encoding="utf-8") as srtFile:
             for segment in segments:
-                startTime = str(0) + str(timedelta(seconds=int(segment["start"]))) + ",000"
+                startTime = (
+                    str(0) + str(timedelta(seconds=int(segment["start"]))) + ",000"
+                )
                 endTime = str(0) + str(timedelta(seconds=int(segment["end"]))) + ",000"
                 text = segment["text"]
 
@@ -85,6 +96,7 @@ def transcribe():
                 )
 
                 srtFile.write(subtitle_segment)
+
 
 thread = Thread(target=transcribe)
 # run the thread
