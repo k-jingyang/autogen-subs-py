@@ -18,11 +18,11 @@ COPY poetry.lock pyproject.toml ./
 # Don't create virtualenv
 RUN poetry config virtualenvs.create false
 
-# Install dependencies (runtime only)
-RUN poetry install --only main
-
 # Copy the entire project
 COPY . .
+
+# Install dependencies (runtime only)
+RUN poetry install --only main
 
 # Expose the port that the application will run on
 EXPOSE 8000

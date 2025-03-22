@@ -56,6 +56,7 @@ async def transcribe_tv(hook: SonarrImportHook):
 def transcribe():
     while True:
         video_path = task_queue.get()
+        logger.info("Loading audio: %s", video_path)
         audio = whisper.load_audio(video_path)
 
         logger.info("Transcribing video: %s", video_path)
